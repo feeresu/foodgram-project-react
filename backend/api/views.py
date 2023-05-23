@@ -23,6 +23,7 @@ from .serializers import (CreateRecipeSerializer, FavoriteSerializer,
 
 
 class UserViewSet(UserViewSet):
+    """ Вывод работы с пользователями """
     queryset = User.objects.all()
     serializer_class = UserSerializer
     pagination_class = CustomPagination

@@ -10,6 +10,7 @@ from users.models import User
 
 class Ingredient(models.Model):
     """ Модель ингредиентов. """
+
     name = models.CharField(
         max_length=settings.LENGTH_OF_RECIPES,
         verbose_name='Ингредиент',
@@ -32,6 +33,7 @@ class Ingredient(models.Model):
 
 class Tag(models.Model):
     """ Модель тегов. """
+
     name = models.CharField(
         verbose_name='Название тега',
         max_length=settings.LENGTH_OF_RECIPES,
@@ -61,6 +63,7 @@ class Tag(models.Model):
 
 class Recipe(models.Model):
     """ Модель рецептов. """
+
     author = models.ForeignKey(
         User,
         verbose_name='Автор рецепта',
@@ -109,6 +112,7 @@ class Recipe(models.Model):
 
 class FavoriteShoppingCart(models.Model):
     """ Модель, связывающая список покупок и избранное. """
+
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
@@ -131,6 +135,7 @@ class FavoriteShoppingCart(models.Model):
 
 class Favorite(FavoriteShoppingCart):
     """ Модель добавления в избранное. """
+
     class Meta(FavoriteShoppingCart.Meta):
         default_related_name = 'favorites'
         verbose_name = 'Избранное'
@@ -139,6 +144,7 @@ class Favorite(FavoriteShoppingCart):
 
 class ShoppingCart(FavoriteShoppingCart):
     """ Модель списка покупок. """
+
     class Meta(FavoriteShoppingCart.Meta):
         default_related_name = 'shopping_list'
         verbose_name = 'Корзина'
@@ -147,6 +153,7 @@ class ShoppingCart(FavoriteShoppingCart):
 
 class IngredientRecipe(models.Model):
     """ Модель ингредиентов рецепта. """
+
     ingredient = models.ForeignKey(
         Ingredient,
         on_delete=models.CASCADE,

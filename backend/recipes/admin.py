@@ -29,7 +29,6 @@ class RecipeAdmin(admin.ModelAdmin):
 
     def get_favorites(self, obj):
         return obj.favorites.count()
-    # get_favorites.short_description = 'Избранное'
 
     def get_ingredients(self, obj):
         """Получает ингредиент или список ингредиентов рецепта."""
@@ -38,7 +37,6 @@ class RecipeAdmin(admin.ModelAdmin):
             in obj.ingredients.values(
                 'ingredient_name', 'amount',
                 'ingredient_measurement_unit')])
-    # get_ingredients.short_description = 'Ингредиенты'
 
 
 class ShoppingCartAdmin(admin.ModelAdmin):
