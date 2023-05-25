@@ -1,4 +1,10 @@
 ## Проект Foodgram
+![example workflow](https://github.com/MrGorkiy/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
+[![Python](https://img.shields.io/badge/-Python-464646?style=flat&logo=Python&logoColor=ffffff&color=043A6B)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/-Django-464646?style=flat&logo=Django&logoColor=ffffff&color=043A6B)](https://www.djangoproject.com/)
+[![Django REST Framework](https://img.shields.io/badge/-Django%20REST%20Framework-464646?style=flat&logo=Django%20REST%20Framework&logoColor=ffffff&color=043A6B)](https://www.django-rest-framework.org/)
+[![HTML](https://img.shields.io/badge/-HTML-464646?style=flat&logo=Html5&logoColor=ffffff&color=043A6B)](https://html.spec.whatwg.org/multipage/)
+[![CSS](https://img.shields.io/badge/-CSS_Bootstrap-464646?style=flat&logo=Css3&logoColor=ffffff&color=043A6B)]([https://html.spec.whatwg.org/multipage/](https://getbootstrap.ru/))
 
 Foodgram - продуктовый помощник с базой кулинарных рецептов. Позволяет публиковать рецепты, сохранять избранные, а также формировать список покупок для выбранных рецептов. Можно подписываться на любимых авторов.
 
@@ -74,11 +80,6 @@ sudo docker-compose exec backend python manage.py createsuperuser
 - Собрать статику:
 ```
 sudo docker-compose exec backend python manage.py collectstatic --noinput
-```
-
-- Наполнить базу данных содержимым из файла ingredients.json:
-```
-sudo docker-compose exec backend python manage.py loaddata ingredients.json
 ```
 
 - Для остановки контейнеров Docker:
